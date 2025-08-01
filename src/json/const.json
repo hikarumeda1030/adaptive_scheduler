@@ -1,0 +1,10 @@
+{
+    "model": "densenet",
+    "bs": 128,
+    "bs_method": "constant",
+    "lr": 0.1,
+    "lr_method": "constant",
+    "epochs": 1000000,
+    "csv_path": "../result/CIFAR100/compare_steps_densenet/bs_const_lr_const/run1/",
+    "check_every": 1800
+}

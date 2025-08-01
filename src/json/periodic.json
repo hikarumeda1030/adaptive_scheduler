@@ -1,0 +1,15 @@
+{
+    "model": "densenet",
+    "bs": 8,
+    "bs_method": "exp_growth",
+    "bs_exp_rate": 2,
+    "bs_step_type": "periodic",
+    "lr": 0.1,
+    "lr_method": "exp_growth",
+    "lr_exp_rate": 1.4,
+    "lr_step_type": "periodic",
+    "eps": 0.5,
+    "epochs": 1000000,
+    "csv_path": "../result/CIFAR100/compare_steps_densenet/bs_periodic_lr_periodic/run2/",
+    "check_every": 1800
+}
