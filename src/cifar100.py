@@ -10,7 +10,6 @@ from training import train, test, Steps, TrainingState, TrainingResults
 from utils import select_model, get_config_value, save_to_csv, get_bs_eps_scheduler, get_lr_scheduler
 from utils.data import DynamicBatchSampler
 from optim.sgd import SGD
-from optim.sgd_schedule_free import SGDScheduleFree
 
 TOTAL_STEPS = None
 MAX_BS = 4096
@@ -34,8 +33,8 @@ if __name__ == '__main__':
     os.makedirs(os.path.dirname(csv_path), exist_ok=True)
 
     # Dataset Preparation
-    mean = [129.3/255, 124.1/255, 112.4/255]
-    std = [68.2/255, 65.4/255, 70.4/255]
+    mean = [129.3 / 255, 124.1 / 255, 112.4 / 255]
+    std = [68.2 / 255, 65.4 / 255, 70.4 / 255]
 
     transform_train = transforms.Compose([
         transforms.RandomCrop(32, padding=4),

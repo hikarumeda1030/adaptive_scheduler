@@ -9,7 +9,7 @@
     "lr_exp_rate": 1.4,
     "lr_step_type": "eps",
     "eps": 0.5,
-    "epochs": 1000000,
+    "epochs": 200,
     "csv_path": "../result/CIFAR100/compare_steps_densenet/bs_free_lr_free/run2/",
-    "check_every": 1800
+    "check_every": 1000
 }
