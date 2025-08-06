@@ -43,10 +43,14 @@ The following JSON configuration file is located at `src/json/periodic.json`:
 | :-------- | :---- | :---------- |
 | `model` | `"resnet18"`, `"WideResNet28_10"`, etc. | Specifies the model architecture to use. |
 | `bs_method` | `"constant"`, `"linear_growth"`, `"exp_growth"` | Method for adjusting the batch size. |
+|`bs_step_type`|`"periodic"`, `"eps"`|Determines how to update the scheduler for the batch size specified by `“bs_method”`.|
 |`lr_method`|`"constant"`, `"cosine"`, `"exp_growth"`|Method for adjusting the learning rate.|
+|`lr_step_type`|`"periodic"`, `"eps"`|Determines how to update the scheduler for the learning rate specified by `“lr_method”`.|
 |`bs`|`int` (e.g., `128`)| The initial batch size for the optimizer. |
 |`lr`|`float` (e.g., `0.1`)| The initial learning rate for the optimizer. |
+|`eps`|`float` (e.g., `0.1`)| The initial epsilon for the optimizer when `"bs_step_type"` or `"lr_step_type"` is `"eps"`. |
+|`check_every`|`int` (e.g., `1000`)| The interval for calculating the gradient norm when `"bs_step_type"` or `"lr_step_type"` is `"eps"`.|
 |`epochs`|`int` (e.g., `300`)|The total number of epochs for training.|
 |`bs_exp_rate`|`float` (e.g., `2.0`)|The factor by which the batch size increases after each interval. Used when `bs_method` is `"exp_growth"`.|
-|`lr_exp_rate`| `float` (e.g., `1.4`) |The factor by which the learning rate increases after each interval. Used when `lr_method` is `"exp_growth"`, `"warnup_const`", or `"warmup_cosine"`.|
+|`lr_exp_rate`| `float` (e.g., `1.4`) |The factor by which the learning rate increases after each interval. Used when `lr_method` is `"exp_growth"`.|
 |`csv_path`|`str` (e.g., `"path/to/result/csv/"`)|Specifies the directory where CSV files will be saved. Four CSV files—`train.csv`, `test.csv`, `norm.csv`, and `lr_bs.csv`—will be saved in this directory.|
